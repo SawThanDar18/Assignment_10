@@ -76,7 +76,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
 
-    // optional - RxJava support for Room
+    //RxJava support for Room
     implementation "androidx.room:room-rxjava2:$room_version"
 
     //Live Data and View Model
@@ -84,6 +84,9 @@ dependencies {
 
     //Work Manager
     implementation "androidx.work:work-runtime:2.2.0"
+
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

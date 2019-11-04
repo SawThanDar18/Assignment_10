@@ -114,6 +114,7 @@ class PhotoDetailActivity: BaseAcitvity(), PhotoDetailView, PhotoListView {
 
     fun bindData(data: PhotoVO){
         photo_detail_iv.load(data.photoUrlVO.regular)
+        user_iv.load(data.userVO.profileImageVO!!.medium)
         user_tv.text = data.userVO.name
         user_account_tv.text = "@" + data.userVO.twitter_username
     }

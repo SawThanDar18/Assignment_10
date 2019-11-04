@@ -24,9 +24,9 @@ data class PhotoVO (
 
     @SerializedName("user")
     @Embedded(prefix = "user_")
-    var userVO: UserVO,
+    var userVO: UserVO
+){
+    val heightRatio: Double
+        get() = height.toDouble() / width.toDouble()
 
-    @SerializedName("profile_image")
-    @Embedded(prefix = "profile_image_")
-    var profileImageVO: ProfileImageVO?
-)
+}

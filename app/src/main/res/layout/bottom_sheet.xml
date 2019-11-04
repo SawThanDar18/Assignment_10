@@ -9,7 +9,7 @@
     android:background="#fff"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_iv"
         android:layout_width="50dp"
         android:layout_height="50dp"
