@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Assigment_10</string>
+
+    <!--activity_photo_list-->
+    <string name="main_lbl1">Unsplash</string>
+    <string name="main_lbl2">Beautiful, free photos.</string>
+    <string name="main_lbl3">Search photos</string>
+
+    <!--activity_photo_detail-->
+    <string name="detail_lbl1">Miguel Runa</string>
+    <string name="detail_lbl2">miguel_runa</string>
+    <string name="detail_lbl3">Related photos</string>
+
+</resources>
