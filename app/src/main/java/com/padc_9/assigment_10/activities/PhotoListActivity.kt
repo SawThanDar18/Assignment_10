@@ -47,8 +47,8 @@ class PhotoListActivity : BaseAcitvity(), PhotoListView {
         photoItemAdapter = PhotoItemAdapter(photoListPresenter)
 
         with(rv_photos){
-            setHasFixedSize(true)
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            setHasFixedSize(true)
             adapter = photoItemAdapter
         }
 
