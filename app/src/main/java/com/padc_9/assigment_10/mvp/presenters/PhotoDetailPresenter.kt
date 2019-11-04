@@ -17,13 +17,4 @@ class PhotoDetailPresenter: BasePresenter<PhotoDetailView>() {
             })
         }
     }
-
-    /*fun onLoadRelatedPhotoList(activity: BaseAcitvity){
-        val model = PhotoListModelImpl
-        model.getAllPhotos {
-            mView.errorMessage(it) }
-            .observe(activity, Observer {
-                mView.displayRelatedPhotoList(it)
-            })
-    }*/
 }
