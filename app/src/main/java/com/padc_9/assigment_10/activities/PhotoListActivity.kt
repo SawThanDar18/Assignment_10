@@ -17,6 +17,7 @@ import com.padc_9.assigment_10.data.models.PhotoListModelImpl
 import com.padc_9.assigment_10.data.vos.PhotoVO
 import com.padc_9.assigment_10.mvp.presenters.PhotoListPresenter
 import com.padc_9.assigment_10.mvp.views.PhotoListView
+import com.padc_9.assigment_10.persistance.PhotoDatabase
 import kotlinx.android.synthetic.main.activity_photo_list.*
 
 class PhotoListActivity : BaseAcitvity(), PhotoListView {
@@ -45,22 +46,19 @@ class PhotoListActivity : BaseAcitvity(), PhotoListView {
         photoListPresenter.initPresenter(this)
 
         photoItemAdapter = PhotoItemAdapter(photoListPresenter)
+        rv_photos.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        rv_photos.setHasFixedSize(true)
+        rv_photos.adapter = photoItemAdapter
 
-        with(rv_photos){
-            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-            setHasFixedSize(true)
-            adapter = photoItemAdapter
-        }
-
-        search_et.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
+        search_et.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                val search_keyword = search_et.text.toString()
+                val search_keyword = search_et.text.toString().trim()
                 return@OnEditorActionListener true
             }
             false
         })
 
-        search_et.setOnKeyListener { v, keyCode, event ->
+        search_et.setOnKeyListener { _, keyCode, _ ->
             if (keyCode == KeyEvent.KEYCODE_DEL) {
                 photoListPresenter.onUiReady(this)
             }
@@ -85,9 +83,9 @@ class PhotoListActivity : BaseAcitvity(), PhotoListView {
     }
 
     fun searchByKeyword(keyword: String){
-        val model: PhotoListModel = PhotoListModelImpl
         photoItemAdapter.setNewData(model.getSearchPhoto(keyword) as MutableList<PhotoVO>)
         rv_photos.adapter = photoItemAdapter
+
     }
 
 }

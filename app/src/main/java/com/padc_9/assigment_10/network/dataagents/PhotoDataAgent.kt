@@ -16,4 +16,6 @@ interface PhotoDataAgent {
     onSuccess: (PhotoVO) -> Unit,
     onFailure: (String) -> Unit
   )
+
+  //fun getSearchPhoto(searchValue: String)
 }

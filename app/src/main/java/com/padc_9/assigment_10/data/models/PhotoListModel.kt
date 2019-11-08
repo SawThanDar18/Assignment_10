@@ -2,6 +2,7 @@ package com.padc_9.assigment_10.data.models
 
 import androidx.lifecycle.LiveData
 import com.padc_9.assigment_10.data.vos.PhotoVO
+import com.padc_9.assigment_10.network.dataagents.RetrofitDataAgent
 
 interface PhotoListModel {
 
@@ -15,5 +16,5 @@ interface PhotoListModel {
         onFailure: (String) -> Unit
     )
 
-    fun getSearchPhoto(id: String): List<PhotoVO>
+    fun getSearchPhoto(searchValue: String): List<PhotoVO>
 }

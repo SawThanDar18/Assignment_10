@@ -2,6 +2,7 @@ package com.padc_9.assigment_10.network.dataagents
 
 import com.padc_9.assigment_10.data.vos.PhotoVO
 import com.padc_9.assigment_10.network.PhotoApi
+import com.padc_9.assigment_10.network.responses.GetSearchPhotosResponse
 import com.padc_9.assigment_10.utils.BASE_URL
 import com.padc_9.assigment_10.utils.EM_NULL_RESPONSE
 import io.reactivex.Observable
@@ -85,4 +86,23 @@ object RetrofitDataAgent: PhotoDataAgent {
     })
   }
 
+  /*override fun getSearchPhoto(searchValue: String) {
+    val call = photoApi.getSearchPhoto(searchValue)
+    call.enqueue(object: Callback<GetSearchPhotosResponse>{
+      override fun onFailure(call: Call<GetSearchPhotosResponse>, t: Throwable) {
+        t.localizedMessage
+      }
+
+      override fun onResponse(call: Call<GetSearchPhotosResponse>, response: Response<GetSearchPhotosResponse>) {
+        val searchPhoto = response.body()
+        if (searchPhoto != null){
+          if (searchPhoto.results != null){
+            searchPhoto.results
+          }
+        }else {
+
+        }
+      }
+    })
+  }*/
 }

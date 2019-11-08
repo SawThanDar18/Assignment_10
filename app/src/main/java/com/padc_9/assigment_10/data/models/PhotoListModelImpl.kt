@@ -61,7 +61,7 @@ object PhotoListModelImpl: PhotoListModel, BaseModel() {
             })
     }
 
-    override fun getSearchPhoto(id: String): List<PhotoVO> {
-        return database.photoDao().getSearchPhoto("%$id%")
+    override fun getSearchPhoto(searchValue: String): List<PhotoVO> {
+        return database.photoDao().getSearchPhoto("%$searchValue%")
     }
 }

@@ -19,4 +19,9 @@ class PhotoListPresenter: BasePresenter<PhotoListView>(), ItemClicked {
                 mView.displayPhotoList(it)
             })
     }
+
+    /*fun displaySearchPhotos(searchValue: String){
+        val model = PhotoListModelImpl
+        model.getSearchPhoto(searchValue)
+    }*/
 }

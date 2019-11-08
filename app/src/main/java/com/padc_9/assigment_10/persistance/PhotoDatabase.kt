@@ -8,7 +8,7 @@ import com.padc_9.assigment_10.data.vos.PhotoVO
 import com.padc_9.assigment_10.persistance.daos.PhotoDao
 import com.padc_9.assigment_10.utils.DB_NAME
 
-@Database(entities = [PhotoVO::class], exportSchema = false, version = 7)
+@Database(entities = [PhotoVO::class], exportSchema = false, version = 9)
 abstract class PhotoDatabase: RoomDatabase() {
 
     abstract fun photoDao(): PhotoDao
